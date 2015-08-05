@@ -5,8 +5,10 @@ var CharacterSheet = require('./character-sheet');
 class App extends React.Component {
   render(){
     return (
-      <div className="container">
-        <CharacterSheet />
+      <div>
+        <div className="container">
+          <CharacterSheet />
+        </div>
       </div>
     );
   }

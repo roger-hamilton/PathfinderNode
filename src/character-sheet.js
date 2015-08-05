@@ -10,7 +10,6 @@ export default class CharacterSheet extends React.Component {
   }
 
   render(){
-    console.log(this.state);
     return (
       <div className="row">
         <div className="col-xs-12">

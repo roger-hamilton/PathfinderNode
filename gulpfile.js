@@ -19,6 +19,7 @@ gulp.task('browserify-watch', function() {
 });
 
 function bundle(watch) {
+  console.log(watch);
     var bro;
 
     if (watch) {
@@ -29,6 +30,9 @@ function bundle(watch) {
             })));
         bro.on('update', function() {
             rebundle(bro);
+        });
+        bro.on('error', function(err) {
+            console.log(err);
         });
     } else {
         bro = browserify('./src/app.js', {
@@ -41,6 +45,7 @@ function bundle(watch) {
     }));
 
     function rebundle(bundler) {
+
         return bundler.bundle()
             .on('error', function(e) {
                 util.log('Browserify Error', e);

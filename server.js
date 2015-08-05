@@ -10,6 +10,9 @@ app.set('view engine', 'jade');
 app.get('/', function (req, res) {
   res.render('index');
 });
+app.get('/live', function (req, res) {
+  res.render('live');
+});
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
